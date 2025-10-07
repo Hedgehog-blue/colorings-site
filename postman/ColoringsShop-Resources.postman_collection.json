@@ -1,0 +1,179 @@
+{
+  "info": {
+    "name": "ColoringsShop-Resources",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authors",
+      "item": [
+        {
+          "name": "Get all authors",
+          "request": { "method": "GET", "url": "http://127.0.0.1:8000/authors/" }
+        },
+        {
+          "name": "Search authors",
+          "request": { "method": "GET", "url": "http://127.0.0.1:8000/authors/?search=Jane" }
+        },
+        {
+          "name": "Paginate authors",
+          "request": { "method": "GET", "url": "http://127.0.0.1:8000/authors/?page=1&limit=2" }
+        },
+        {
+          "name": "Create author",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Smith\",\n  \"bio\": \"Disney colorings\"\n}"
+            },
+            "url": "http://127.0.0.1:8000/authors/"
+          }
+        },
+        {
+          "name": "Get author by id",
+          "request": { "method": "GET", "url": "http://127.0.0.1:8000/authors/1/" }
+        },
+        {
+          "name": "Update author",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Jane Doe Updated\",\n  \"bio\": \"Illustrator and writer\"\n}"
+            },
+            "url": "http://127.0.0.1:8000/authors/1/"
+          }
+        },
+        {
+          "name": "Delete author",
+          "request": { "method": "DELETE", "url": "http://127.0.0.1:8000/authors/1/" }
+        }
+      ]
+    },
+    {
+      "name": "Colorings",
+      "item": [
+        {
+          "name": "Get all colorings",
+          "request": { "method": "GET", "url": "http://127.0.0.1:8000/colorings/" }
+        },
+        {
+          "name": "Filter colorings (by author + theme)",
+          "request": { "method": "GET", "url": "http://127.0.0.1:8000/colorings/?author=1&theme=nature" }
+        },
+        {
+          "name": "Sort colorings by price desc",
+          "request": { "method": "GET", "url": "http://127.0.0.1:8000/colorings/?sort=price:desc" }
+        },
+        {
+          "name": "Create coloring (valid)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Forest\",\n  \"author\": 1,\n  \"theme\": \"nature\",\n  \"pages\": 48,\n  \"price\": 9.99,\n  \"currency\": \"USD\",\n  \"sku\": \"CB-001\"\n}"
+            },
+            "url": "http://127.0.0.1:8000/colorings/"
+          }
+        },
+        {
+          "name": "Create coloring (invalid price → 422)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Bad\",\n  \"author\": 1,\n  \"theme\": \"nature\",\n  \"pages\": 10,\n  \"price\": 0,\n  \"currency\": \"USD\",\n  \"sku\": \"BAD-001\"\n}"
+            },
+            "url": "http://127.0.0.1:8000/colorings/"
+          }
+        },
+        {
+          "name": "Get coloring by id",
+          "request": { "method": "GET", "url": "http://127.0.0.1:8000/colorings/1/" }
+        },
+        {
+          "name": "Update coloring",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Forest Updated\",\n  \"author\": 1,\n  \"theme\": \"adventure\",\n  \"pages\": 52,\n  \"price\": 12.50,\n  \"currency\": \"USD\",\n  \"sku\": \"CB-001-UPD\"\n}"
+            },
+            "url": "http://127.0.0.1:8000/colorings/1/"
+          }
+        },
+        {
+          "name": "Delete coloring",
+          "request": { "method": "DELETE", "url": "http://127.0.0.1:8000/colorings/1/" }
+        }
+      ]
+    },
+    {
+      "name": "Pencils",
+      "item": [
+        {
+          "name": "Get all pencils",
+          "request": { "method": "GET", "url": "http://127.0.0.1:8000/pencils/" }
+        },
+        {
+          "name": "Search + sort pencils",
+          "request": { "method": "GET", "url": "http://127.0.0.1:8000/pencils/?search=Faber&sort=price:asc" }
+        },
+        {
+          "name": "Paginate pencils",
+          "request": { "method": "GET", "url": "http://127.0.0.1:8000/pencils/?page=1&limit=3" }
+        },
+        {
+          "name": "Create pencil",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Faber 9000 HB\",\n  \"brand\": \"Faber-Castell\",\n  \"hardness\": \"HB\",\n  \"price\": 1.50,\n  \"currency\": \"USD\",\n  \"sku\": \"P-9000-HB\"\n}"
+            },
+            "url": "http://127.0.0.1:8000/pencils/"
+          }
+        },
+        {
+          "name": "Create pencil (invalid price → 422)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Bad Pencil\",\n  \"brand\": \"Test\",\n  \"hardness\": \"B\",\n  \"price\": 0,\n  \"currency\": \"USD\",\n  \"sku\": \"P-000\"\n}"
+            },
+            "url": "http://127.0.0.1:8000/pencils/"
+          }
+        },
+        {
+          "name": "Get pencil by id",
+          "request": { "method": "GET", "url": "http://127.0.0.1:8000/pencils/1/" }
+        },
+        {
+          "name": "Update pencil",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Faber 9000 2B\",\n  \"brand\": \"Faber-Castell\",\n  \"hardness\": \"2B\",\n  \"price\": 1.75,\n  \"currency\": \"USD\",\n  \"sku\": \"P-9000-2B\"\n}"
+            },
+            "url": "http://127.0.0.1:8000/pencils/1/"
+          }
+        },
+        {
+          "name": "Delete pencil",
+          "request": { "method": "DELETE", "url": "http://127.0.0.1:8000/pencils/1/" }
+        }
+      ]
+    }
+  ]
+}

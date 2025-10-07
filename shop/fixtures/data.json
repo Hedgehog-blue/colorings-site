@@ -1,0 +1,35 @@
+[
+  {
+    "model": "shop.author",
+    "pk": 1,
+    "fields": {
+      "name": "Jane Doe",
+      "bio": "Children illustrator"
+    }
+  },
+  {
+    "model": "shop.coloring",
+    "pk": 1,
+    "fields": {
+      "title": "Forest",
+      "author": 1,
+      "theme": "nature",
+      "pages": 48,
+      "price": 9.99,
+      "currency": "USD",
+      "sku": "CB-001"
+    }
+  },
+  {
+    "model": "shop.pencil",
+    "pk": 1,
+    "fields": {
+      "name": "Faber 9000 HB",
+      "brand": "Faber-Castell",
+      "hardness": "HB",
+      "price": 1.5,
+      "currency": "USD",
+      "sku": "P-9000-HB"
+    }
+  }
+]
