@@ -1,0 +1,80 @@
+[
+  {
+    "model": "colorings.author",
+    "pk": 1,
+    "fields": {
+      "name": "Johanna Basford",
+      "biography": "Illustrator known for popular adult coloring books such as Secret Garden and Enchanted Forest."
+    }
+  },
+  {
+    "model": "colorings.author",
+    "pk": 2,
+    "fields": {
+      "name": "Millie Marotta",
+      "biography": "Welsh artist and illustrator famous for intricate nature-themed coloring books."
+    }
+  },
+  {
+    "model": "colorings.coloringbook",
+    "pk": 1,
+    "fields": {
+      "title": "Secret Garden: An Inky Treasure Hunt and Coloring Book",
+      "author": 1,
+      "theme": "anti-stress",
+      "price": "320.00",
+      "description": "A bestselling adult coloring book with intricate floral and garden illustrations designed to calm the mind."
+    }
+  },
+  {
+    "model": "colorings.coloringbook",
+    "pk": 2,
+    "fields": {
+      "title": "Enchanted Forest: An Inky Quest and Coloring Book",
+      "author": 1,
+      "theme": "anti-stress",
+      "price": "350.00",
+      "description": "Journey through an enchanted forest with hidden objects and magical illustrations to color."
+    }
+  },
+  {
+    "model": "colorings.coloringbook",
+    "pk": 3,
+    "fields": {
+      "title": "Animal Kingdom: Color Me, Draw Me",
+      "author": 2,
+      "theme": "nature, mindfulness",
+      "price": "280.00",
+      "description": "Anti-stress coloring book with beautifully detailed illustrations of animals and plants."
+    }
+  },
+  {
+    "model": "colorings.coloringbook",
+    "pk": 4,
+    "fields": {
+      "title": "Wild Savannah",
+      "author": 2,
+      "theme": "mindfulness",
+      "price": "300.00",
+      "description": "Mindful coloring journey through the African savannah with intricate animal and plant designs."
+    }
+  },
+  {
+    "model": "colorings.markers",
+    "pk": 1,
+    "fields": {
+      "name": "Stabilo Point 88 Fineliners (30 pack)",
+      "brand": "Stabilo",
+      "price": "520.00"
+    }
+  },
+  {
+    "model": "colorings.markers",
+    "pk": 2,
+    "fields": {
+      "name": "Faber-Castell Pitt Artist Pens (Pastel Set)",
+      "brand": "Faber-Castell",
+      "price": "780.00"
+    }
+  }
+]
