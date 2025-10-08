@@ -1,0 +1,20 @@
+{
+  "info": { "name": "Colorings API - Simple GETs (127.0.0.1)", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "item": [
+    {
+      "name": "Books - list",
+      "request": { "method": "GET", "header": [{ "key": "Accept", "value": "application/json"}], "url": "http://127.0.0.1:8000/colorings/" },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Status is 200', function () { pm.response.to.have.status(200); });"] } }]
+    },
+    {
+      "name": "Authors - list",
+      "request": { "method": "GET", "header": [{ "key": "Accept", "value": "application/json"}], "url": "http://127.0.0.1:8000/authors/" },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Status is 200', function () { pm.response.to.have.status(200); });"] } }]
+    },
+    {
+      "name": "Markers - list",
+      "request": { "method": "GET", "header": [{ "key": "Accept", "value": "application/json"}], "url": "http://127.0.0.1:8000/markers/" },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Status is 200', function () { pm.response.to.have.status(200); });"] } }]
+    }
+  ]
+}
